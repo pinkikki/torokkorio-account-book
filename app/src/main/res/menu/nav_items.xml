@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/nav_item_home"
+      android:icon="@drawable/ic_action_rabbit"
+      android:title="@string/nav_item_home"/>
+  <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_item_save"
+        android:icon="@drawable/ic_action_kuleva"
+        android:title="@string/nav_item_save"/>
+    <item
+        android:id="@+id/nav_item_pending"
+        android:icon="@drawable/ic_action_dragon"
+        android:title="@string/pending"/>
+  </group>
+  <item android:title="@string/pending">
+    <menu>
+      <item
+          android:id="@+id/nav_sub_item_pending"
+          android:icon="@drawable/ic_action_zanpanman"
+          android:title="@string/pending"/>
+    </menu>
+  </item>
+</menu>
+
