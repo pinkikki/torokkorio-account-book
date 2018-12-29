@@ -12,7 +12,7 @@
     <item
         android:id="@+id/nav_item_pending"
         android:icon="@drawable/ic_action_dragon"
-        android:title="@string/pending"/>
+        android:title="@string/nav_item_list"/>
   </group>
   <item android:title="@string/pending">
     <menu>

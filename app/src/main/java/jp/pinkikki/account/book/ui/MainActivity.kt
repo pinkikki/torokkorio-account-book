@@ -52,8 +52,8 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
     private fun getContent(menuItem: MenuItem): Fragment {
         return when (menuItem.itemId) {
-            R.id.nav_item_save -> Save()
-            R.id.nav_item_pending -> Pending()
+            R.id.nav_item_save -> ItemSave()
+            R.id.nav_item_pending -> ItemList()
             R.id.nav_sub_item_pending -> SubPending()
             else -> Home()
         }

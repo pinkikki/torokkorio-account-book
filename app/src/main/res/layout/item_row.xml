@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+    <variable name="model" type="jp.pinkikki.account.book.http.AccountBook"/>
+  </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/linearLayout" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+        >
+
+      <TextView
+          android:text="@{model.item}"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" android:id="@+id/item_name" android:layout_weight="1"
+          android:textSize="18sp"/>
+      <TextView
+          android:text="@{model.amount}"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" android:id="@+id/item_amount" android:layout_weight="1"
+          android:textSize="18sp"/>
+
+    </LinearLayout>
+
+</layout>

@@ -17,7 +17,7 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
 
-class Save : Fragment(), KodeinAware {
+class ItemSave : Fragment(), KodeinAware {
     override val kodein: Kodein by closestKodein()
     private val accountBookService: AccountBookService by instance()
 

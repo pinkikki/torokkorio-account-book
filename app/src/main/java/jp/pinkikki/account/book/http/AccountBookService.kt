@@ -8,4 +8,8 @@ interface AccountBookService {
     @Headers("Content-Type: application/json")
     @POST("torokkorio-purchase-registration")
     fun register(@Body accountBook: AccountBook, @Header("Authorization") accessToken: String): Observable<Map<String, Any>>
+
+    @Headers("Content-Type: application/json")
+    @GET("torokkorio-item-list")
+    fun list(): Observable<List<AccountBook>>
 }
