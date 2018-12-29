@@ -1,6 +1,7 @@
-package jp.pinkikki.account.book.http
+package jp.pinkikki.account.book.port.adapter
 
 import io.reactivex.Observable
+import jp.pinkikki.account.book.domain.model.AccountBook
 import retrofit2.http.*
 
 interface AccountBookService {

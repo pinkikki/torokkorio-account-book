@@ -10,12 +10,13 @@ import androidx.fragment.app.Fragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import jp.pinkikki.account.book.R
-import jp.pinkikki.account.book.http.AccountBook
-import jp.pinkikki.account.book.http.AccountBookService
+import jp.pinkikki.account.book.domain.model.AccountBook
+import jp.pinkikki.account.book.port.adapter.AccountBookService
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
+import java.time.LocalDateTime
 
 class ItemSave : Fragment(), KodeinAware {
     override val kodein: Kodein by closestKodein()
@@ -27,15 +28,22 @@ class ItemSave : Fragment(), KodeinAware {
         val apiKey = resources.getString(R.string.api_key)
 
         val purchaseButton = view.findViewById<Button>(R.id.purchase_button)
-        val itemText = view.findViewById<EditText>(R.id.item_text)
+        val nameText = view.findViewById<EditText>(R.id.name_text)
         val amountText = view.findViewById<EditText>(R.id.amount_text)
+        val dateText = view.findViewById<EditText>(R.id.purchase_date_text)
         purchaseButton.setOnClickListener {
             accountBookService
-                .register(AccountBook(itemText.text.toString(), amountText.text.toString()), apiKey)
+                .register(
+                    AccountBook(
+                        nameText.text.toString(),
+                        amountText.text.toString(),
+                        LocalDateTime.parse(dateText.text.toString())
+                    ), apiKey
+                )
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    itemText.text.clear()
+                    nameText.text.clear()
                     amountText.text.clear()
                 }
         }

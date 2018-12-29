@@ -10,4 +10,7 @@
   <string name="nav_item_home">ホームだっぽい</string>
   <string name="logo">logo</string>
   <string name="nav_item_list">みるっぴ</string>
+  <string name="sum_item_amount_prefix">合計：</string>
+  <string name="en">￥</string>
+  <string name="purchase_date">買った日</string>
 </resources>

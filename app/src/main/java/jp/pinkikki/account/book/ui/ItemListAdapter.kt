@@ -9,10 +9,9 @@ import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 import jp.pinkikki.account.book.R
 import jp.pinkikki.account.book.databinding.ItemRowBinding
-import jp.pinkikki.account.book.http.AccountBook
 
-class ItemListAdapter(context: Context, accountBooks: List<AccountBook>) :
-    ArrayAdapter<AccountBook>(context, 0, accountBooks) {
+class ItemListAdapter(context: Context, itemRows: List<ItemRow>) :
+    ArrayAdapter<ItemRow>(context, 0, itemRows) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var view = convertView
